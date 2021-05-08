@@ -2,12 +2,10 @@ var express = require("express");
 var app = express();
 var getMobileCircle = require('./function');
 var cors = require("cors");
-var morgan = require('morgan')
 
 //Init Middleware
 app.use(express.json({ extended: false }));
 app.use(cors());
-morgan('tiny')
 
 app.get('/api/getDetail/:phone', (req, res) => {
     const phoneNumber = req.params.phone;
