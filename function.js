@@ -2709,17 +2709,23 @@ const data = [
     ["8685", "VI", "DELHI"],
   ];
 
-  if(number.length < 12 && String(number).substring(0,2)=='91'){
-    var number = String(number);
-    var halfOfNumber = number.substring(2,5);
-    var firstFourOfNumber = number.substring(2,4);
+  var number, halfOfNumber, firstFourOfNumber;
+
+  //fetching the first five digit/four digits of the number to make a search
+  if(number.length == 12 && String(number).substring(0,2)=='91'){
+     number = String(number);
+     halfOfNumber = number.substring(2,7);
+     firstFourOfNumber = number.substring(2,6);
+  }else {
+     number = String(number);
+     halfOfNumber = number.substring(0,5);
+     firstFourOfNumber = number.substring(0,4);
   }
-  var number = String(number);
-  var halfOfNumber = number.substring(0,5);
-  var firstFourOfNumber = number.substring(0,4);
+
+  
+  //finding the data acoording to the number
   data.map((operator) => {
       if(operator[0] == halfOfNumber ){
-          flag =1;
           return response = operator
       }else if(operator[0] == firstFourOfNumber){
         return response = operator
