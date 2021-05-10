@@ -1,7 +1,7 @@
 //declared the function
 function getMobileCircle(number) {
   var response = {
-    errors: "Operator Not Found"
+    error: "Operator Not Found"
   };
 
   //data
