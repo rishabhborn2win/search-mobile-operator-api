@@ -4,11 +4,7 @@ function getMobileCircle(number) {
     error: "Operator Not Found"
   };
 
-  if(number.length < 10 || number.length ===11){
-    response = {
-      error:  "Please enter a valid Phone Number"
-    }
-  }
+ 
 
   //data
   const data = [
@@ -2845,6 +2841,12 @@ function getMobileCircle(number) {
       });
     }
   });
+
+  if(number.length < 10 || number.length ===11){
+    response = {
+      error:  "Please enter a valid Phone Number"
+    }
+  }
 
   return response;
 }
