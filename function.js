@@ -1,7 +1,7 @@
 //declared the function
 function getMobileCircle(number) {
   var response = {
-    errors: [{ msg: "Operator Not Found" }],
+    errors: "Operator Not Found"
   };
 
   //data
@@ -2828,9 +2828,15 @@ function getMobileCircle(number) {
   //finding the data acoording to the number
   data.map((operator) => {
     if (operator[0] == halfOfNumber) {
-      return (response = operator);
+      rreturn (response = {
+        operator: operator[1],
+        circle: operator[2]
+      });
     } else if (operator[0] == firstFourOfNumber) {
-      return (response = operator);
+      return (response = {
+        operator: operator[1],
+        circle: operator[2]
+      });
     }
   });
 

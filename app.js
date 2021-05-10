@@ -9,10 +9,18 @@ app.use(cors());
 
 app.get("/api/getDetail/:phone", (req, res) => {
   const phoneNumber = req.params.phone;
-  var response = getMobileCircle(phoneNumber);
-  res.status(200).json({ details: response });
+  try {
+    var response = getMobileCircle(phoneNumber);
+    res.status(200).json({ details: response });
+    
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).json({details: {
+      error: "Server Error"
+    }})
+  }
 });
 
 //Declaring the servers
-var port = process.env.PORT || 500;
+var port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server started on ${port}`));
